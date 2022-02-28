@@ -1,4 +1,4 @@
-<html lang="ru">
+<html lang="en">
 <head>
  <link rel="stylesheet" href="style.css" />
 </head>
@@ -6,7 +6,7 @@
 <h1 class ="titles" id="linktitle"> Form </h1>
   <form action ="/backend/" method = "POST">
 	<label>
-			Имя:<br />
+			Name:<br />
 			<input name="field-name-1" />
 		  </label><br />
 	<label>
@@ -15,17 +15,17 @@
 			  type="email" />
 		  </label><br />
 	<label>
-			Дата рождения :<br />
+			Birth-date :<br />
 			<input name="field-date"
 			  type="date" />
 		  </label><br />
-	Пол: <label><input type="radio" checked="checked"
+	Sex: <label><input type="radio" checked="checked"
 			name="radio-group-1" value = "male" />
-			Мужчина </label>
+			Male </label>
 		  <label><input type="radio"
 			name="radio-group-1" value = "female" />
-			Женщина </label><br />
-	Кол-во конечностей: <br/> <label><input type="radio" checked="checked"
+			Female </label><br />
+	Amoflimbs: <br/> <label><input type="radio" checked="checked"
 			name="radio-group-2" value = "limbCou1" />
 			1 </label><br/>
 		  <label><input type="radio"
@@ -41,23 +41,23 @@
 			name="radio-group-2" value = "limbCou5" />
 			5 </label><br />
 	<label>
-			Сверхспособности:
+			Superpowers:
 			<br/>
 			<select name="field-name-4[]"
 			  multiple="multiple">
-			  <option value="immortality">Бессмертие</option>
-			  <option value="walkthroughwalls" >Хождение сквозь стены</option>
-			  <option value="levitation">Левитация</option>
+			  <option value="immortality">Immortality</option>
+			  <option value="walkthroughwalls" >Walk through walls</option>
+			  <option value="levitation">levitation</option>
 			</select>
 		  </label><br />
 	<label>
-	Биография: <br/>
+	Biography: <br/>
 	  <textarea name = "bio-field"> </textarea>
 	</label> <br/>
 	<label>
-	  <input type = "checkbox" name = "checkbox"> С контрактом ознакомлен(а) </label> <br/>
-	  Отправить: <br/>
-	  <input type="submit" value="Отправить" />
+	  <input type = "checkbox" name = "checkbox"> I agree with the contract </label> <br/>
+	  Send: <br/>
+	  <input type="submit" value="Sending" />
   </form>
 </body>
 </html>
