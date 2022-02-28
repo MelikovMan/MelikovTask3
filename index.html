@@ -1,0 +1,63 @@
+<html lang="ru">
+<head>
+ <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 class ="titles" id="linktitle"> Form </h1>
+  <form action ="/backend/" method = "POST">
+	<label>
+			Имя:<br />
+			<input name="field-name-1" />
+		  </label><br />
+	<label>
+			email:<br />
+			<input name="field-email"
+			  type="email" />
+		  </label><br />
+	<label>
+			Дата рождения :<br />
+			<input name="field-date"
+			  type="date" />
+		  </label><br />
+	Пол: <label><input type="radio" checked="checked"
+			name="radio-group-1" value = "male" />
+			Мужчина </label>
+		  <label><input type="radio"
+			name="radio-group-1" value = "female" />
+			Женщина </label><br />
+	Кол-во конечностей: <br/> <label><input type="radio" checked="checked"
+			name="radio-group-2" value = "limbCou1" />
+			1 </label><br/>
+		  <label><input type="radio"
+			name="radio-group-2" value = "limbCou2" />
+			2 </label><br />
+			<label><input type="radio"
+			name="radio-group-2" value = "limbCou3" />
+			3 </label><br />
+			<label><input type="radio"
+			name="radio-group-2" value = "limbCou4" />
+			4 </label><br />
+			<label><input type="radio"
+			name="radio-group-2" value = "limbCou5" />
+			5 </label><br />
+	<label>
+			Сверхспособности:
+			<br/>
+			<select name="field-name-4[]"
+			  multiple="multiple">
+			  <option value="immortality">Бессмертие</option>
+			  <option value="walkthroughwalls" >Хождение сквозь стены</option>
+			  <option value="levitation">Левитация</option>
+			</select>
+		  </label><br />
+	<label>
+	Биография: <br/>
+	  <textarea name = "bio-field"> </textarea>
+	</label> <br/>
+	<label>
+	  <input type = "checkbox" name = "checkbox"> С контрактом ознакомлен(а) </label> <br/>
+	  Отправить: <br/>
+	  <input type="submit" value="Отправить" />
+  </form>
+</body>
+</html>
