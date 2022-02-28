@@ -9,5 +9,7 @@ if(empty($_POST['field-name-1']) || empty($_POST['field-email']) || empty($_POST
 	exit();
 }
 print_r('Non null data...');
-print_r($_POST['field-name-4[]']);
+foreach($_POST['field-name-4[]'] as &tmp){
+print_r(&tmp.'/n');
+}
 exit();
