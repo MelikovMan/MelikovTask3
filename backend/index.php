@@ -9,9 +9,16 @@ if(empty($_POST['field-name-1']) || !isset($_POST['field-name-4']) || empty($_PO
 	exit();
 }
 print_r("Non null data... /n");
-print_r($_POST."/n");
+&name = $_POST['field-name-1'];
+&email = $_POST['field-email'];
+&birth = $_POST['field-date'];
+&sex = $_POST['radio-group-1'];
+&limbs = intval(substr($_POST['field-group-2'],-1));
 $superpowers = $_POST['field-name-4'];
-foreach ($superpowers as $val){
-	print_r($val);
-}
+&name = $_POST['bio-field'];
+print_r($birth);
+$user = 'u47551';
+$pass = '4166807';
+//$db = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+
 exit();
