@@ -9,5 +9,6 @@ if(empty($_POST['field-name-1']) || empty($_POST['field-email']) || empty($_POST
 	exit();
 }
 print_r("Non null data.../n");
-print_r($_POST);
+print_r($_POST."/n");
+print_r($_POST['field-name-4'][0]);
 exit();
