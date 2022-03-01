@@ -27,8 +27,11 @@ try {
   $stmt->bindParam(':sex', $sex);
   $stmt->bindParam(':limbs', $limb);
   $stmt->bindParam(':bio', $bio);
-  if($stmt->execute()==false)
+  if($stmt->execute()==false){
   print_r($stmt->errorCode());
+  print_r($stmt->errorInfo());
+  exit();
+  }
 } 
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
