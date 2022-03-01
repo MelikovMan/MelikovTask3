@@ -10,5 +10,4 @@ if(empty($_POST['field-name-1']) || empty($_POST['field-email']) || empty($_POST
 }
 print_r('Non null data...'.'/n');
 print_r($_POST.'/n');
-}
 exit();
