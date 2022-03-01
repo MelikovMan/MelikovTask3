@@ -20,7 +20,7 @@ $user = 'u47551';
 $pass = '4166807';
 $db = new PDO('mysql:host=localhost;dbname=u47551', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
-  $stmt = $db->prepare("INSERT INTO contracts VALUES(1,:name,:email,:birthdate,:sex,:limbs,:bio)");
+  $stmt = $db->prepare("INSERT INTO contracts SET name=:name, email=:email, birthdate=:birthdate, sex=:sex, limb_count=:limbs, bio=:bio");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':birthdate', $birth);
