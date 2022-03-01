@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST'){
 	print_r('Does not accept non POST methods');
 }
 $errors = FALSE;
-if(empty($_POST['field-name-1']) || isset($_POST['field-name-4']) || empty($_POST['field-email']) || empty($_POST['field-date']) || empty($_POST['bio-field'])){
+if(empty($_POST['field-name-1']) || !isset($_POST['field-name-4']) || empty($_POST['field-email']) || empty($_POST['field-date']) || empty($_POST['bio-field'])){
 	print_r('Empty fields!');
 	exit();
 }
