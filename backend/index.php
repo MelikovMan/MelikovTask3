@@ -13,7 +13,7 @@ $name = $_POST['field-name-1'];
 $email = $_POST['field-email'];
 $birth = $_POST['field-date'];
 $sex = $_POST['radio-group-1'];
-$limbs = intval(substr($_POST['field-group-2'],-1));
+$limbs = intval(substr($_POST['radio-group-2'],-1));
 $superpowers = $_POST['field-name-4'];
 $name = $_POST['bio-field'];
 print_r($birth);
