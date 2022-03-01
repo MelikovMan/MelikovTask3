@@ -15,10 +15,23 @@ $birth = $_POST['field-date'];
 $sex = $_POST['radio-group-1'];
 $limbs = intval(substr($_POST['radio-group-2'],-1));
 $superpowers = $_POST['field-name-4'];
-$name = $_POST['bio-field'];
-print_r($birth);
+$bio= $_POST['bio-field'];
 $user = 'u47551';
 $pass = '4166807';
-//$db = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
-
-exit();
+$db = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+try {
+  $stmt = $db->prepare("INSERT INTO contracts VALUES(1,:name,:email,:birthdate,:sex,:limbs,:bio)");
+  $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':email', $email);
+  $stmt->bindParam(':birthdate', $birth);
+  $stmt->bindParam(':sex', $sex);
+  $stmt->bindParam(':limbs', $limb);
+  $stmt->bindParam(':bio', $bio);
+  $stmt->execute():
+} 
+catch(PDOException $e){
+  print('Error : ' . $e->getMessage());
+  exit();
+}
+print_r("Succesfully added new stuff, probably...");
+?>
