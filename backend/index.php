@@ -18,7 +18,6 @@ $superpowers = $_POST['field-name-4'];
 $bio= $_POST['bio-field'];
 $user = 'u47551';
 $pass = '4166807';
-print_r($limbs);
 $db = new PDO('mysql:host=localhost;dbname=u47551', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
   $stmt = $db->prepare("INSERT INTO contracts SET name=:name, email=:email, birthdate=:birthdate, sex=:sex, limb_count=:limbs, bio=:bio");
@@ -26,7 +25,7 @@ try {
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':birthdate', $birth);
   $stmt->bindParam(':sex', $sex);
-  $stmt->bindParam(':limbs', $limb);
+  $stmt->bindParam(':limbs', $limbs);
   $stmt->bindParam(':bio', $bio);
   if($stmt->execute()==false){
   print_r($stmt->errorCode());
