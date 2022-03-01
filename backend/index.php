@@ -18,7 +18,7 @@ $superpowers = $_POST['field-name-4'];
 $bio= $_POST['bio-field'];
 $user = 'u47551';
 $pass = '4166807';
-$db = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+$db = new PDO('mysql:host=localhost;dbname=u47551', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
   $stmt = $db->prepare("INSERT INTO contracts VALUES(1,:name,:email,:birthdate,:sex,:limbs,:bio)");
   $stmt->bindParam(':name', $name);
