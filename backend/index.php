@@ -32,10 +32,22 @@ try {
   print_r($stmt->errorInfo());
   exit();
   }
+  &id = $db => lastInsertId();
+  $sppe= $db->prepare("INSERT INTO superpowers SET name=:name, person_id=:person");
+  $sppe->bindParam(':person', $id);
+  foreach($superpowers as $inserting){
+	$sppe->bindParam(':name', $inserting);
+	if($sppe->execute()==false){
+	  print_r($sppe->errorCode());
+	  print_r($sppe->errorInfo());
+	  exit();
+	}
+  }
 } 
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
   exit();
 }
+
 print_r("Succesfully added new stuff, probably...");
 ?>
