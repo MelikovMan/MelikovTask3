@@ -35,16 +35,17 @@ if(!preg_match($dateregex,$birth)){
 	print_r('Invalid birth format');
 	exit();
 }
-preg_match("/\d+/g",$birth,$matches);
+preg_match_all("/\d+/",$birth,$matches);
 print_r($matches);
 if(!preg_match($regex,$bio)){
 	print_r('Invalid bio format');
 	exit();
 }
-if(!preg_match($mailregex,$email)){
+/*if(!preg_match($mailregex,$email)){
 	print_r('Invalid email format');
 	exit();
 }
+*/
 if($sex !== 'male' && $sex !== 'female'){
 	print_r('Invalid sex format');
 	exit();
