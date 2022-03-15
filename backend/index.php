@@ -21,7 +21,7 @@ $superpowers = $_POST['field-name-4'];
 $bio= $_POST['bio-field'];
 $regex = "/^\w+[\w\s-]*$/";
 $dateregex = "/^\d{4}-\d{2}-\d{2}$/";
-$mailregex = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
+$mailregex = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
 $super_list = array('immortality','walkthroughwalls','levitation');
 if(!preg_match($regex,$name)){
 	print_r('Invalid name format');
@@ -36,16 +36,18 @@ if(!preg_match($dateregex,$birth)){
 	exit();
 }
 preg_match_all("/\d+/",$birth,$matches);
-print_r($matches);
+if (!checkdate($matches[0],$matches[1],$matches[2])){
+	print_r('Date does not exist');
+	exit();
+}
 if(!preg_match($regex,$bio)){
 	print_r('Invalid bio format');
 	exit();
 }
-/*if(!preg_match($mailregex,$email)){
+if(!preg_match($mailregex,$email)){
 	print_r('Invalid email format');
 	exit();
 }
-*/
 if($sex !== 'male' && $sex !== 'female'){
 	print_r('Invalid sex format');
 	exit();
