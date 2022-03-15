@@ -19,10 +19,10 @@ $sex = $_POST['radio-group-1'];
 $limbs = intval($_POST['radio-group-2']);
 $superpowers = $_POST['field-name-4'];
 $bio= $_POST['bio-field'];
-$regex = "/^\w+[\w\s-]*$/"
-$dateregex = "/^\d{4}-\d{2}-\d{2}$/"
-$mailregex = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/"
-$super_list = array('immortality','walkthroughwalls','levitation')
+$regex = "/^\w+[\w\s-]*$/";
+$dateregex = "/^\d{4}-\d{2}-\d{2}$/";
+$mailregex = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
+$super_list = array('immortality','walkthroughwalls','levitation');
 if(!preg_match($regex,$name)){
 	print_r('Invalid name format');
 	exit();
