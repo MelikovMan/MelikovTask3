@@ -8,6 +8,9 @@ if(empty($_POST['field-name-1']) || !isset($_POST['field-name-4']) || empty($_PO
 	print_r('Empty fields!');
 	exit();
 }
+if(!is_numeric($_POST['radio-group-2'])){
+	print_r('Limb field is non-numeric');
+}
 print_r("Non null data... /n");
 $name = $_POST['field-name-1'];
 $email = $_POST['field-email'];
@@ -16,6 +19,42 @@ $sex = $_POST['radio-group-1'];
 $limbs = intval($_POST['radio-group-2']);
 $superpowers = $_POST['field-name-4'];
 $bio= $_POST['bio-field'];
+$regex = "/^\w+[\w\s-]*$/"
+$dateregex = "/^\d{4}-\d{2}-\d{2}$/"
+$mailregex = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/"
+$super_list = array('immortality','walkthroughwalls','levitation')
+if(!preg_match($regex,$name)){
+	print_r('Invalid name format');
+	exit();
+}
+if($limbs < 1 || $limbs > 5){
+	print_r('Invalid am of limbs');
+	exit();
+}
+if(!preg_match($dateregex,$birth)){
+	print_r('Invalid birth format');
+	exit();
+}
+preg_match("/\d+/g",$birth,$matches);
+print_r($matches);
+if(!preg_match($regex,$bio)){
+	print_r('Invalid bio format');
+	exit();
+}
+if(!preg_match($mailregex,$email)){
+	print_r('Invalid email format');
+	exit();
+}
+if($sex !== 'male' && $sex !== 'female'){
+	print_r('Invalid sex format');
+	exit();
+}
+foreach($superpowers as $checking){
+	if(array_search($checking,$super_list)=== false){
+			print_r('Invalid superpower value!');
+			exit();
+	}
+}
 $user = 'u47551';
 $pass = '4166807';
 $db = new PDO('mysql:host=localhost;dbname=u47551', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
