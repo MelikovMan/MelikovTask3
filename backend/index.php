@@ -32,7 +32,7 @@ try {
   print_r($stmt->errorInfo());
   exit();
   }
-  &id = $db => lastInsertId();
+  $id = $db => lastInsertId();
   $sppe= $db->prepare("INSERT INTO superpowers SET name=:name, person_id=:person");
   $sppe->bindParam(':person', $id);
   foreach($superpowers as $inserting){
