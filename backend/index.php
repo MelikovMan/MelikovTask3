@@ -19,6 +19,7 @@ $sex = $_POST['radio-group-1'];
 $limbs = intval($_POST['radio-group-2']);
 $superpowers = $_POST['field-name-4'];
 $bio= $_POST['bio-field'];
+$bioregex = "/^\s*\w+[\w\s\.,-]*$/";
 $regex = "/^\w+[\w\s-]*$/";
 $dateregex = "/^\d{4}-\d{2}-\d{2}$/";
 $mailregex = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
@@ -41,7 +42,7 @@ if (!checkdate($matches[0][1],$matches[0][2],$matches[0][0])){
 	print_r('Date does not exist');
 	exit();
 }
-if(!preg_match($regex,$bio)){
+if(!preg_match($bioregex,$bio)){
 	print_r('Invalid bio format');
 	exit();
 }
