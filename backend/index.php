@@ -11,7 +11,7 @@ if(empty($_POST['field-name-1']) || !isset($_POST['field-name-4']) || empty($_PO
 if(!is_numeric($_POST['radio-group-2'])){
 	print_r('Limb field is non-numeric');
 }
-print_r("Non null data... /n");
+print_r("Non null data... <br/>");
 $name = $_POST['field-name-1'];
 $email = $_POST['field-email'];
 $birth = $_POST['field-date'];
