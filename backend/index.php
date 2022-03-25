@@ -37,7 +37,6 @@ if(!preg_match($dateregex,$birth)){
 	exit();
 }
 preg_match_all("/\d+/",$birth,$matches);
-print_r($matches);
 if (!checkdate($matches[0][1],$matches[0][2],$matches[0][0])){
 	print_r('Date does not exist');
 	exit();
